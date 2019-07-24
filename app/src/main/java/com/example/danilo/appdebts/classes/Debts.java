@@ -1,25 +1,47 @@
 package com.example.danilo.appdebts.classes;
 
-import java.util.Date;
-
 /**
- * Created by Rafael Sousa on 27/06/19.
+ * Created by danilo on 24/06/19.
  */
 
 public class Debts {
     private long mId;
     private Category mCategory;
-    private Double mValor;
+    private float mValue;
     private String mDescription;
-    private String mExpireDate;
-    private String mPaymentDate;
+    private String mPaymentDate; //data do vencimento
+    private String mPayDate;     //data do pagamento
+
+    public Debts() {
+    }
+
+    public Debts(Category category, float value, String description, String paymentDate, String payDate) {
+        mCategory = category;
+        mValue = value;
+        mDescription = description;
+        mPaymentDate = paymentDate;
+        mPayDate = payDate;
+    }
+
+    public Debts(Category category, float value, String paymentDate) {
+        mCategory = category;
+        mValue = value;
+        mPaymentDate = paymentDate;
+    }
+
+    public Debts(Category category, float value, String paymentDate, String payDate) {
+        mCategory = category;
+        mValue = value;
+        mPaymentDate = paymentDate;
+        mPayDate = payDate;
+    }
 
     public long getId() {
         return mId;
     }
 
     public void setId(long id) {
-        this.mId = id;
+        mId = id;
     }
 
     public Category getCategory() {
@@ -27,15 +49,31 @@ public class Debts {
     }
 
     public void setCategory(Category category) {
-        this.mCategory = category;
+        mCategory = category;
     }
 
-    public Double getValor() {
-        return mValor;
+    public float getValue() {
+        return mValue;
     }
 
-    public void setValor(Double valor) {
-        this.mValor = valor;
+    public void setValue(float value) {
+        mValue = value;
+    }
+
+    public String getPaymentDate() {
+        return mPaymentDate;
+    }
+
+    public void setPaymentDate(String paymentDate) {
+        mPaymentDate = paymentDate;
+    }
+
+    public String getPayDate() {
+        return mPayDate;
+    }
+
+    public void setPayDate(String payDate) {
+        mPayDate = payDate;
     }
 
     public String getDescription() {
@@ -44,21 +82,5 @@ public class Debts {
 
     public void setDescription(String description) {
         mDescription = description;
-    }
-
-    public String getExpire_date() {
-        return mExpireDate;
-    }
-
-    public void setExpire_date(String expire_date) {
-        this.mExpireDate = expire_date;
-    }
-
-    public String getPayment_date() {
-        return mPaymentDate;
-    }
-
-    public void setPayment_date(String payment_date) {
-        this.mPaymentDate = payment_date;
     }
 }
